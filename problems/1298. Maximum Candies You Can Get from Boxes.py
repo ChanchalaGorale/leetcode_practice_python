@@ -12,12 +12,6 @@
 
 # Your goal is to collect as many candies as possible.
 
-# Hint:
-# Use a queue to simulate the box-opening process.
-# Only open boxes that are accessible and can be opened (have key or are open).
-# Add new keys and new boxes found, repeat the process.
-# Track visited boxes to prevent double counting.
-
 from collections import deque
 
 def maxCandies(status, candies, keys, containedBoxes, initialBoxes):
@@ -52,7 +46,6 @@ def maxCandies(status, candies, keys, containedBoxes, initialBoxes):
             for b in containedBoxes[box]:
                 queue.append(b)
         
-        # If no progress is made and queue has only unopened boxes, break to avoid infinite loop
         if not progress:
             break
 
