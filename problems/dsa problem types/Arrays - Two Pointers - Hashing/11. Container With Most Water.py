@@ -22,11 +22,11 @@ class Solution:
             w = right - left
             max_area = max(max_area, h * w)
 
-            # Move the pointer pointing to the shorter line
-            if height[left] < height[right]:
-                left += 1
-            else:
-                right -= 1
+            # Move the pointer pointing to the shorter line & more height
+            while left< right and height[left] <= h:
+                left+=1
+            while left< right and height[right] <= h:
+                right-=1
 
         return max_area
     
